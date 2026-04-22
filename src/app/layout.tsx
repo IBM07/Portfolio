@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "TypeScript",
     "Machine Learning",
   ],
-  authors: [{ name: "Mohammed Ibrahim Aejaz", url: "https://ibrahimaejaz.com" }],
+  authors: [{ name: "Mohammed Ibrahim Aejaz", url: "https://www.linkedin.com/in/mohammedibrahimaejaz/" }],
   openGraph: {
     title: "Mohammed Ibrahim Aejaz - AI Full-Stack Engineer",
     description: "Building AI products that actually ship.",

@@ -89,12 +89,11 @@ export const resumeData = {
   ],
 
   skills: {
-    "Languages & Frameworks": ["Python", "JavaScript", "FastAPI", "Selenium", "Streamlit"],
-    "Backend & Data": ["REST APIs", "PostgreSQL", "MongoDB", "Redis", "JWT/RBAC", "SQLAlchemy"],
-    "Frontend": ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
-    "Cloud & DevOps": ["Docker", "Digital Ocean", "Celery", "Vercel"],
-    "AI & Data": ["Groq API", "Ollama", "LangChain", "Pandas", "NumPy"],
-    "Tools": ["Git/GitHub", "Prisma", "Clerk", "Razorpay"],
+    "Languages & Frameworks": ["Python", "TypeScript", "FastAPI", "Next.js"],
+    "Backend & Database": ["PostgreSQL & MongoDB", "MySQL", "Redis", "SQLAlchemy & Prisma", "REST APIs"],
+    "AI & Data Science": ["LangChain", "Groq API & Ollama", "Pandas & NumPy"],
+    "Cloud & DevOps": ["Docker", "Digital Ocean"],
+    "Frontend & UI": ["Tailwind CSS", "shadcn/ui", "Framer Motion"],
   },
 
   certifications: [
@@ -105,12 +104,13 @@ export const resumeData = {
   quote: "I build for the last mile — not just the demo.",
 
   expertise: [
-    "Full Stack AI Engineer",
-    "SaaS Architecture",
-    "Backend Development",
-    "Authentication & Security",
-    "Containerized Deployment",
-    "Real-time Analytics",
-    "Enterprise Solutions",
+  "Production-Ready Web Applications",
+  "Full-Stack Development",
+  "Authentication & Security",
+  "Real-time Analytics",
+  "Enterprise Solutions",
+  "Scalable Web Architecture",
+  "Frontend Performance Optimization",
+  "AI Integration & Prompt Engineering"
   ],
 };
