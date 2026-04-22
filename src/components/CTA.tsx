@@ -60,7 +60,7 @@ export default function CTA() {
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-orange-500 transition font-mono text-sm"
             >
-              LinkedIn Profile
+              LinkedIn
             </a>
             <a
               href={resumeData.personal.github}

@@ -45,8 +45,7 @@ export default function About() {
           <div className="animate-on-scroll" style={{ "--animate-delay": "150ms" } as React.CSSProperties}>
             <p className="text-gray-300 text-lg leading-relaxed mb-6">{resumeData.bio}</p>
             <p className="text-gray-400">
-              Based in Hyderabad, I'm a developer focused on scaling my own SaaS ventures, consulting for high-growth startups,
-              and contributing to open-source tooling.
+              Based in {resumeData.personal.location}, I'm passionate about building scalable solutions and creating impactful AI products.
             </p>
           </div>
 
