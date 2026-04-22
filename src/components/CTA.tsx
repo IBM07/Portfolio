@@ -28,7 +28,7 @@ export default function CTA() {
             href="mailto:ibrahimaejaz@gmail.com"
             className="inline-block px-10 py-4 bg-orange-500 text-black hover:bg-orange-600 transition font-bold text-lg"
           >
-            START A COLLABORATION
+            HIRE ME
           </a>
         </div>
 
