@@ -61,7 +61,7 @@ export default function Hero() {
 
         {/* Subheading */}
         <p className="text-center text-gray-400 text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
-          Full Stack AI Engineer • SaaS Founder • Freelance Dev • Hyderabad.
+          Full Stack AI Engineer • SaaS Founder • Hyderabad.
         </p>
 
         {/* CTA Buttons */}
