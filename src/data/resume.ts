@@ -10,7 +10,7 @@ export const resumeData = {
 
   title: "Junior AI Full-Stack Engineer",
   headline: "Building AI products that actually ship.",
-  bio: "I am an engineer focused on bridging the gap between experimental AI and production-ready software. My work involves designing resilient architectures that handle complex neural workflows without compromising on user experience.",
+  bio: "I am an engineer focused on bridging the gap between experimental AI and production-ready software.",
 
   experience: [
     {
