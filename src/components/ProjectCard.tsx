@@ -20,14 +20,14 @@ export default function ProjectCard({
   technologies,
 }: ProjectCardProps) {
   return (
-    <div className="group border border-gray-700 hover:border-orange-500 transition-all duration-300 p-6 hover:shadow-lg hover:shadow-orange-500/10">
+    <div className="group/card border border-gray-700 hover:border-orange-500/70 transition-all duration-300 p-6 hover:shadow-lg hover:shadow-orange-500/10 hover:-translate-y-1">
       {/* Category Badge */}
       <div className="flex items-center gap-2 mb-4">
         <span className="text-xs font-mono text-orange-500 uppercase">{category}</span>
       </div>
 
       {/* Title */}
-      <h3 className="text-2xl font-serif font-bold text-white mb-2 group-hover:text-orange-500 transition">
+      <h3 className="text-2xl font-serif font-bold text-white mb-2 transition-all duration-300 group-hover/card:text-orange-500 group-hover/card:translate-x-1">
         {title}
       </h3>
 
@@ -49,8 +49,12 @@ export default function ProjectCard({
 
       {/* Technologies */}
       <div className="flex flex-wrap gap-2 mb-6">
-        {technologies.slice(0, 4).map((tech) => (
-          <span key={tech} className="text-xs bg-orange-500/10 text-orange-400 px-2 py-1 rounded">
+        {technologies.slice(0, 4).map((tech, idx) => (
+          <span
+            key={tech}
+            className="text-xs bg-orange-500/10 text-orange-400 px-2 py-1 rounded transition-transform duration-300 hover:-translate-y-0.5"
+            style={{ transitionDelay: `${idx * 35}ms` }}
+          >
             {tech}
           </span>
         ))}
@@ -61,10 +65,10 @@ export default function ProjectCard({
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-orange-500 hover:text-orange-400 transition font-medium text-sm flex items-center gap-2 group"
+        className="text-orange-500 hover:text-orange-400 transition font-medium text-sm flex items-center gap-2 group/link"
       >
         View Project
-        <svg className="w-4 h-4 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.8 4.2L19.8 10.2M19.8 10.2H9M19.8 10.2v10" />
         </svg>
       </Link>

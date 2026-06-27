@@ -1,11 +1,40 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { resumeData } from "@/data/resume";
 
 export default function CTA() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (prefersReducedMotion.matches) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    if (sectionRef.current) {
+      const animatedElements = sectionRef.current.querySelectorAll(".animate-on-scroll");
+      animatedElements.forEach((el) => observer.observe(el));
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="contact" className="py-20 px-6 bg-black">
+    <section id="contact" className="py-20 px-6 bg-black" ref={sectionRef}>
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="mb-16">
+        <div className="mb-16 animate-on-scroll" style={{ "--animate-delay": "0ms" } as React.CSSProperties}>
           <div className="flex items-center gap-3 mb-4">
             <span className="text-orange-500 font-mono text-sm">04</span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white">Let's Build</h2>
@@ -14,26 +43,26 @@ export default function CTA() {
         </div>
 
         {/* Main CTA */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-on-scroll" style={{ "--animate-delay": "150ms" } as React.CSSProperties}>
           <h3 className="text-5xl md:text-6xl font-serif font-bold text-white mb-8 leading-tight">
             Have a project? I want to hear it.
           </h3>
           <p className="text-gray-400 text-lg mb-12 max-w-2xl mx-auto">
-            Whether you're building a SaaS, need AI integration, or have a unique challenge — let's collaborate and ship
+            Whether you're building a SaaS, need AI integration, or have a unique challenge, let's collaborate and ship
             something exceptional.
           </p>
 
           {/* CTA Button */}
           <a
             href="mailto:ibrahimaejaz@gmail.com"
-            className="inline-block px-10 py-4 bg-orange-500 text-black hover:bg-orange-600 transition font-bold text-lg"
+            className="inline-block px-10 py-4 bg-orange-500 text-black hover:bg-orange-600 hover:-translate-y-0.5 transition-all duration-300 font-bold text-lg shadow-lg shadow-orange-500/20"
           >
             HIRE ME
           </a>
         </div>
 
         {/* Contact Info */}
-        <div className="border-t border-gray-800 pt-12 mt-12">
+        <div className="border-t border-gray-800 pt-12 mt-12 animate-on-scroll" style={{ "--animate-delay": "250ms" } as React.CSSProperties}>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Email */}
             <div>

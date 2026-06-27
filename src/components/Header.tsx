@@ -45,6 +45,8 @@ export default function Header() {
           className="md:hidden text-white hover:text-orange-500 transition"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -52,28 +54,32 @@ export default function Header() {
         </button>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="absolute top-full left-0 right-0 bg-black border-b border-orange-500/20 md:hidden">
-            <div className="flex flex-col gap-4 p-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-gray-300 hover:text-orange-500 transition text-sm"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
+        <div
+          id="mobile-navigation"
+          className={`absolute top-full left-0 right-0 bg-black border-b border-orange-500/20 md:hidden overflow-hidden transition-all duration-300 ease-out ${
+            isOpen ? "max-h-80 opacity-100 translate-y-0 pointer-events-auto" : "max-h-0 opacity-0 -translate-y-2 pointer-events-none"
+          }`}
+        >
+          <div className="flex flex-col gap-4 p-6">
+            {navLinks.map((link, index) => (
               <a
-                href="mailto:ibrahimaejaz@gmail.com"
-                className="px-4 py-2 border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black transition font-medium text-sm text-center"
+                key={link.label}
+                href={link.href}
+                className="text-gray-300 hover:text-orange-500 transition text-sm"
+                style={{ transitionDelay: isOpen ? `${index * 40}ms` : "0ms" }}
+                onClick={() => setIsOpen(false)}
               >
-                CONNECT
+                {link.label}
               </a>
-            </div>
+            ))}
+            <a
+              href="mailto:ibrahimaejaz@gmail.com"
+              className="px-4 py-2 border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black transition font-medium text-sm text-center"
+            >
+              CONNECT
+            </a>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   );
