@@ -30,6 +30,22 @@ export const resumeData = {
 
   projects: [
     {
+      title: "Marketing_Agent (HyperDrive AI)",
+      subtitle: "AI Lead-Gen & Outreach Automation",
+      url: "https://github.com/IBM07/Marketing_Agent",
+      category: "OPEN SOURCE",
+      description:
+        "Built an AI-powered real-time lead generation and cold outreach platform that automates prospect discovery, email extraction/validation, and campaign execution via an asynchronous multi-agent pipeline.",
+      highlights: [
+        "Converts plain-language prospecting goals into verified leads + campaign execution",
+        "Queue-based multi-worker pipeline (Discovery → Extraction → Validation)",
+        "Multi-provider LLM failover/rotation for reliability and cost-aware execution",
+        "Self-hostable Docker deployment with worker separation and health monitoring",
+        "AES-encrypted credentials + unsubscribe flow for CAN-SPAM/GDPR-style compliance"
+      ],
+      technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Redis", "BullMQ", "Docker"],
+    },
+    {
       title: "Builder's Arsenal",
       subtitle: "AI-Powered Startup Blueprint Platform",
       url: "https://buildersarsenal.tech",
@@ -37,7 +53,7 @@ export const resumeData = {
       description:
         "Production-ready SaaS platform enabling non-technical founders to build and ship software faster using AI IDEs like Cursor and Windsurf.",
       highlights: [
-        "Built 8 AI tools powered by Groq (Llama 3.3 70B) with streaming responses",
+        "Built 4 AI tools powered by Gemini (gemini-2.5-flash) with quick responses",
         "Implemented complete subscription & payment system using Razorpay with webhooks",
         "Integrated Clerk Auth, Neon PostgreSQL + Prisma, Upstash Redis rate limiting",
         "Modern, responsive frontend with Next.js 16, React 19, TypeScript, Tailwind + shadcn/ui",
@@ -104,13 +120,13 @@ export const resumeData = {
   quote: "I build for the last mile — not just the demo.",
 
   expertise: [
-  "Production-Ready Web Applications",
-  "Full-Stack Development",
-  "Authentication & Security",
-  "Real-time Analytics",
-  "Enterprise Solutions",
-  "Scalable Web Architecture",
-  "Frontend Performance Optimization",
-  "AI Integration & Prompt Engineering"
+    "Production-Ready Web Applications",
+    "Full-Stack Development",
+    "Authentication & Security",
+    "Real-time Analytics",
+    "Enterprise Solutions",
+    "Scalable Web Architecture",
+    "Frontend Performance Optimization",
+    "AI Integration & Prompt Engineering"
   ],
 };
