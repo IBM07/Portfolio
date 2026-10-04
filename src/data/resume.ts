@@ -2,8 +2,8 @@ export const resumeData = {
   personal: {
     name: "Mohammed Ibrahim Aejaz",
     email: "ibrahimaejaz@gmail.com",
-    phone: "+91-9550847586",
-    location: "Hyderabad, India",
+    phone: "+971505483559",
+    location: "Dubai, UAE",
     linkedin: "https://www.linkedin.com/in/mohammedibrahimaejaz/",
     github: "https://github.com/IBM07",
   },
@@ -30,6 +30,34 @@ export const resumeData = {
 
   projects: [
     {
+      title: "InvoiceFlow AI",
+      subtitle: "Gmail Invoice Extraction & Review Platform",
+      url: "https://github.com/IBM07/InvoiceflowAI",
+      category: "FULL STACK",
+      description:
+        "Production-validated platform that finds Gmail invoice attachments, extracts structured data, and gives users a secure review workflow.",
+      highlights: [
+        "Google OAuth with AES-256-GCM token encryption and private, RLS-scoped storage",
+        "PDF text parsing, OCR fallback, and Groq structured extraction with confidence scoring",
+        "Durable sync jobs, version-safe invoice corrections, and HMAC-signed webhooks",
+      ],
+      technologies: ["Next.js", "Fastify", "Supabase", "Cloudflare Workers", "Groq", "TypeScript"],
+    },
+    {
+      title: "FinTrack",
+      subtitle: "Natural-Language Personal Finance Tracker",
+      url: "https://github.com/IBM07/FinTrack",
+      category: "MOBILE APP",
+      description:
+        "Production Android app for creating, editing, deleting, and querying personal transactions through plain-language text or voice.",
+      highlights: [
+        "Natural-language and voice commands for everyday transaction management",
+        "Secure Expo client with one FastAPI host and server-side data intelligence",
+        "Dashboard, analytics, manual CRUD with undo, and voice-input workflows",
+      ],
+      technologies: ["React Native", "Expo", "FastAPI", "PostgreSQL", "Groq API", "Deepgram"],
+    },
+    {
       title: "Marketing_Agent (HyperDrive AI)",
       subtitle: "AI Lead-Gen & Outreach Automation",
       url: "https://github.com/IBM07/Marketing_Agent",
@@ -44,31 +72,6 @@ export const resumeData = {
         "AES-encrypted credentials + unsubscribe flow for CAN-SPAM/GDPR-style compliance"
       ],
       technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Redis", "BullMQ", "Docker"],
-    },
-    {
-      title: "Builder's Arsenal",
-      subtitle: "AI-Powered Startup Blueprint Platform",
-      url: "https://buildersarsenal.tech",
-      category: "SAAS",
-      description:
-        "Production-ready SaaS platform enabling non-technical founders to build and ship software faster using AI IDEs like Cursor and Windsurf.",
-      highlights: [
-        "Built 4 AI tools powered by Gemini (gemini-2.5-flash) with quick responses",
-        "Implemented complete subscription & payment system using Razorpay with webhooks",
-        "Integrated Clerk Auth, Neon PostgreSQL + Prisma, Upstash Redis rate limiting",
-        "Modern, responsive frontend with Next.js 16, React 19, TypeScript, Tailwind + shadcn/ui",
-        "Features: Video Academy, Prompts Library, Deployment Guides, Pro Dashboard",
-      ],
-      technologies: [
-        "Next.js 16",
-        "TypeScript",
-        "Prisma",
-        "PostgreSQL",
-        "Groq AI",
-        "Razorpay",
-        "Clerk",
-        "Tailwind CSS",
-      ],
     },
     {
       title: "Career Cortex",
@@ -89,7 +92,7 @@ export const resumeData = {
     {
       title: "AI Finance Tracker",
       subtitle: "Natural Language Expense Management",
-      url: "https://github.com/IBM07/nlp-finance-tracker",
+      url: "https://nlp-finance-tracker.pages.dev/",
       category: "FULL STACK",
       description: "Conversational expense tracker converting natural language into SQL queries with 100% accuracy.",
       highlights: [
@@ -105,7 +108,7 @@ export const resumeData = {
   ],
 
   skills: {
-    "Languages & Frameworks": ["Python", "TypeScript", "FastAPI", "Next.js"],
+    "Languages & Frameworks": ["Python", "TypeScript", "FastAPI", "Next.js", "React Native (Mobile Applications)"],
     "Backend & Database": ["PostgreSQL & MongoDB", "MySQL", "Redis", "SQLAlchemy & Prisma", "REST APIs"],
     "AI & Data Science": ["LangChain", "Groq API & Ollama", "Pandas & NumPy"],
     "Cloud & DevOps": ["Docker", "Digital Ocean"],

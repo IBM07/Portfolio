@@ -21,3 +21,5 @@
 
 # Misc
 *.log
+.vercel
+.env*
