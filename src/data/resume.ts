@@ -2,7 +2,7 @@ export const resumeData = {
   personal: {
     name: "Mohammed Ibrahim Aejaz",
     email: "ibrahimaejaz@gmail.com",
-    phone: "+971505483559",
+    phone: "+971543688486",
     location: "Dubai, UAE",
     linkedin: "https://www.linkedin.com/in/mohammedibrahimaejaz/",
     github: "https://github.com/IBM07",
@@ -32,7 +32,7 @@ export const resumeData = {
     {
       title: "InvoiceFlow AI",
       subtitle: "Gmail Invoice Extraction & Review Platform",
-      url: "https://github.com/IBM07/InvoiceflowAI",
+      url: "https://invoiceflow-ai-seven.vercel.app/",
       category: "FULL STACK",
       description:
         "Production-validated platform that finds Gmail invoice attachments, extracts structured data, and gives users a secure review workflow.",
@@ -118,6 +118,10 @@ export const resumeData = {
   certifications: [
     "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
     "Oracle Fusion AI Agent Studio Certified Foundations Associate - Rel 1",
+  ],
+  certificationLinks: [
+    "https://catalog-education.oracle.com/ords/certview/sharebadge?id=F88B2A65469BA0EB9F231C3A87DEE1FB7E3996559707A78AED5C847AB06149FF",
+    "https://catalog-education.oracle.com/ords/certview/sharebadge?id=7C5CD5B9045158C1D7418340B9965113E424006BD3EDCB81DA8072234FCAC6B4",
   ],
 
   quote: "I build for the last mile — not just the demo.",

@@ -78,6 +78,13 @@ export default function Hero() {
           >
             LET'S TALK
           </a>
+          <a
+            href="/Mohammed_Ibrahim_Aejaz_Resume_v4.pdf"
+            download
+            className="px-8 py-3 border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black transition font-medium"
+          >
+            DOWNLOAD RESUME
+          </a>
         </div>
 
         {/* Scroll Indicator */}

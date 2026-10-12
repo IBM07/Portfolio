@@ -65,9 +65,15 @@ export default function About() {
             <h3 className="text-sm font-mono text-orange-500 uppercase mt-10 mb-4">Certifications</h3>
             <div className="space-y-2">
               {resumeData.certifications.map((cert, idx) => (
-                <p key={idx} className="text-gray-400 text-sm">
+                <a
+                  key={idx}
+                  href={resumeData.certificationLinks[idx]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-gray-400 text-sm transition-colors hover:text-orange-500 hover:underline underline-offset-4"
+                >
                   ✓ {cert}
-                </p>
+                </a>
               ))}
             </div>
           </div>
