@@ -1,40 +1,18 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { resumeData } from "@/data/resume";
 import ProjectCard from "./ProjectCard";
 
 export default function ProjectsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
   const totalSlides = resumeData.projects.length;
 
   useEffect(() => {
-    // Scroll-triggered animations via IntersectionObserver
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (!prefersReducedMotion.matches) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-
-      if (sectionRef.current) {
-        const animatedElements = sectionRef.current.querySelectorAll('.animate-on-scroll');
-        animatedElements.forEach((el) => observer.observe(el));
-      }
-      return () => observer.disconnect();
-    }
-  }, []);
-
-  useEffect(() => {
-    // Auto-advance carousel every 4 seconds, unless hovered
+    // Auto-advance every 4s, unless paused (hover/focus/touch) or reduced motion is requested
     if (isHovered || totalSlides <= 1) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % totalSlides);
     }, 4000);
@@ -45,7 +23,7 @@ export default function ProjectsSection() {
   const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
 
   return (
-    <section id="projects" className="py-20 px-6 bg-black overflow-hidden" ref={sectionRef}>
+    <section id="projects" className="py-20 px-6 bg-black overflow-hidden">
       <div className="max-w-6xl mx-auto relative group">
         {/* Section Header */}
         <div 
@@ -65,16 +43,24 @@ export default function ProjectsSection() {
           style={{ "--animate-delay": "200ms" } as React.CSSProperties}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
+          onFocus={() => setIsHovered(true)}
+          onBlur={() => setIsHovered(false)}
+          onTouchStart={() => setIsHovered(true)}
         >
           {/* Projects Track Mask */}
-          <div className="overflow-hidden bg-black py-4">
+          <div className="overflow-hidden bg-black py-6">
             {/* Flex track that translates precisely to the current slide */}
-            <div 
-              className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] will-change-transform"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            <div
+              className="flex transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] motion-reduce:transition-none"
+              style={{ transform: `translate3d(-${currentIndex * 100}%, 0, 0)` }}
             >
               {resumeData.projects.map((project, idx) => (
-                <div key={idx} className="w-full shrink-0 flex-none md:p-2">
+                <div
+                  key={idx}
+                  className="w-full shrink-0 flex-none md:p-2"
+                  aria-hidden={idx !== currentIndex}
+                  inert={idx !== currentIndex}
+                >
                   <div className="max-w-4xl mx-auto h-full"> 
                     <ProjectCard {...project} />
                   </div>

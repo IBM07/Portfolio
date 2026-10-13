@@ -1,37 +1,8 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import { resumeData } from "@/data/resume";
 
 export default function CTA() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (prefersReducedMotion.matches) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-    );
-
-    if (sectionRef.current) {
-      const animatedElements = sectionRef.current.querySelectorAll(".animate-on-scroll");
-      animatedElements.forEach((el) => observer.observe(el));
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section id="contact" className="py-20 px-6 bg-black" ref={sectionRef}>
+    <section id="contact" className="py-20 px-6 bg-black">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="mb-16 animate-on-scroll" style={{ "--animate-delay": "0ms" } as React.CSSProperties}>
@@ -55,7 +26,7 @@ export default function CTA() {
           {/* CTA Button */}
           <a
             href="mailto:ibrahimaejaz@gmail.com"
-            className="inline-block px-10 py-4 bg-orange-500 text-black hover:bg-orange-600 hover:-translate-y-0.5 transition-all duration-300 font-bold text-lg shadow-lg shadow-orange-500/20"
+            className="btn-press inline-block px-10 py-4 bg-orange-500 text-black hover:bg-orange-600 font-bold text-lg shadow-lg shadow-orange-500/20"
           >
             HIRE ME
           </a>

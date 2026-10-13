@@ -9,7 +9,7 @@ export const resumeData = {
   },
 
   title: "Junior AI Full-Stack Engineer",
-  headline: "Building AI products that actually ship.",
+  headline: "Shipping AI products that solve real problems.",
   bio: "I am an engineer focused on bridging the gap between experimental AI and production-ready software.",
 
   experience: [
@@ -32,7 +32,10 @@ export const resumeData = {
     {
       title: "InvoiceFlow AI",
       subtitle: "Gmail Invoice Extraction & Review Platform",
-      url: "https://invoiceflow-ai-seven.vercel.app/",
+      links: [
+        { label: "Live", href: "https://invoiceflow-ai-seven.vercel.app/" },
+        { label: "GitHub", href: "https://github.com/IBM07/InvoiceflowAI" },
+      ],
       category: "FULL STACK",
       description:
         "Production-validated platform that finds Gmail invoice attachments, extracts structured data, and gives users a secure review workflow.",
@@ -46,7 +49,7 @@ export const resumeData = {
     {
       title: "FinTrack",
       subtitle: "Natural-Language Personal Finance Tracker",
-      url: "https://github.com/IBM07/FinTrack",
+      links: [{ label: "GitHub", href: "https://github.com/IBM07/FinTrack" }],
       category: "MOBILE APP",
       description:
         "Production Android app for creating, editing, deleting, and querying personal transactions through plain-language text or voice.",
@@ -60,7 +63,7 @@ export const resumeData = {
     {
       title: "Marketing_Agent (HyperDrive AI)",
       subtitle: "AI Lead-Gen & Outreach Automation",
-      url: "https://github.com/IBM07/Marketing_Agent",
+      links: [{ label: "GitHub", href: "https://github.com/IBM07/Marketing_Agent" }],
       category: "OPEN SOURCE",
       description:
         "Built an AI-powered real-time lead generation and cold outreach platform that automates prospect discovery, email extraction/validation, and campaign execution via an asynchronous multi-agent pipeline.",
@@ -76,7 +79,7 @@ export const resumeData = {
     {
       title: "Career Cortex",
       subtitle: "AI-Powered Job Search Platform",
-      url: "https://github.com/IBM07/Career-Cortex",
+      links: [{ label: "GitHub", href: "https://github.com/IBM07/Career-Cortex" }],
       category: "OPEN SOURCE",
       description:
         "Autonomous job aggregation platform with intelligent candidate-job matching engine powered by AI.",
@@ -88,22 +91,6 @@ export const resumeData = {
         "Full Docker containerization for scalable deployment",
       ],
       technologies: ["Flask", "MySQL", "Selenium", "Ollama", "Python", "Docker"],
-    },
-    {
-      title: "AI Finance Tracker",
-      subtitle: "Natural Language Expense Management",
-      url: "https://nlp-finance-tracker.pages.dev/",
-      category: "FULL STACK",
-      description: "Conversational expense tracker converting natural language into SQL queries with 100% accuracy.",
-      highlights: [
-        "FastAPI backend integrating Groq API (Llama 3.3 70B) for natural language processing",
-        "100% query accuracy through zero-hallucination prompting with spam detection",
-        "SQL injection prevention layers for security",
-        "Real-time analytics dashboard with SQLite (migration-ready for MySQL/PostgreSQL)",
-        "Interactive visualizations using Pandas and Plotly",
-        "Production-grade logging (file + console)",
-      ],
-      technologies: ["FastAPI", "Groq API", "SQLite", "Pandas", "Plotly", "Python"],
     },
   ],
 

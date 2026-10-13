@@ -14,7 +14,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 w-full bg-black/95 backdrop-blur-sm border-b border-orange-500/20 z-50">
+    <header className="fixed top-0 w-full bg-black/95 border-b border-orange-500/20 z-50">
       <nav className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="#" className="text-xl font-serif text-white hover:text-orange-500 transition">
@@ -27,14 +27,14 @@ export default function Header() {
             <a
               key={link.label}
               href={link.href}
-              className="text-gray-300 hover:text-orange-500 transition text-sm"
+              className="nav-link text-gray-300 hover:text-orange-500 transition-colors text-sm"
             >
               {link.label}
             </a>
           ))}
           <a
             href="mailto:ibrahimaejaz@gmail.com"
-            className="px-4 py-2 border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black transition font-medium text-sm"
+            className="btn-press px-4 py-2 border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-black font-medium text-sm"
           >
             CONNECT
           </a>
@@ -56,8 +56,8 @@ export default function Header() {
         {/* Mobile Navigation */}
         <div
           id="mobile-navigation"
-          className={`absolute top-full left-0 right-0 bg-black border-b border-orange-500/20 md:hidden overflow-hidden transition-all duration-300 ease-out ${
-            isOpen ? "max-h-80 opacity-100 translate-y-0 pointer-events-auto" : "max-h-0 opacity-0 -translate-y-2 pointer-events-none"
+          className={`absolute top-full left-0 right-0 bg-black border-b border-orange-500/20 md:hidden transition-[opacity,transform,visibility] duration-300 ease-out ${
+            isOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"
           }`}
         >
           <div className="flex flex-col gap-4 p-6">

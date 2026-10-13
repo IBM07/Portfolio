@@ -1,34 +1,8 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import { resumeData } from "@/data/resume";
 
 export default function About() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Intersection Observer for Scroll Animations
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (!prefersReducedMotion.matches) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-
-      if (sectionRef.current) {
-        const animatedElements = sectionRef.current.querySelectorAll('.animate-on-scroll');
-        animatedElements.forEach((el) => observer.observe(el));
-      }
-      return () => observer.disconnect();
-    }
-  }, []);
-
   return (
-    <section id="about" className="py-20 px-6 bg-black" ref={sectionRef}>
+    <section id="about" className="py-20 px-6 bg-black">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="mb-16 animate-on-scroll" style={{ "--animate-delay": "0ms" } as React.CSSProperties}>
