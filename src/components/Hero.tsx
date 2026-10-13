@@ -26,7 +26,7 @@ export default function Hero() {
         </div>
 
         {/* Main Heading */}
-        <h1 className="hero-in text-5xl md:text-7xl font-serif font-bold text-white text-center mb-8 leading-tight" style={delay(120)}>
+        <h1 className="hero-in text-4xl sm:text-5xl md:text-7xl font-serif font-bold text-white text-center mb-8 leading-tight" style={delay(120)}>
           Shipping AI products that solve real problems.
         </h1>
 

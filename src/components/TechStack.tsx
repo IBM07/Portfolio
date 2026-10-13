@@ -19,7 +19,7 @@ export default function TechStack() {
         </div>
 
         {/* Tech Stack Grid */}
-        <div className="grid md:grid-cols-2 gap-16">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16">
           {/* Left Column */}
           <div className="space-y-8">
             {leftColumn.map(([category, skills], index) => (
